@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body style="text-align: center;">
+    <h1>To Do List</h1>
+    <input type="text" id="input">
+    <button onclick="fun()">add task</button>
+    <script>
+        function fun ()
+        {
+            let display=document.getElementById('input').value;
+            let ul=document.createElement('ul');
+            let li=document.createElement('li');
+            ul.appendChild(li);
+            li.textContent=display;
+            li.style.listStyle='none';
+            document.body.append(ul);
+            document.getElementById('input').value=' ';
+        }
+    </script>
+    
+</body>
+</html>

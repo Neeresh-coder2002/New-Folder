@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculater2 </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="icon" href="../house img.jpg">
+    <style>
+        *
+        {
+            margin: 0px;
+            padding: 0px;
+        }
+        .Container
+        {
+            height: 470px;
+            width: 360px;
+            margin: auto;
+            border: 1px solid black;
+            margin-top: 30px;
+            border-radius: 35px;
+            background-color: darkgrey;
+        }
+        button
+        {
+            height: 40px;
+            width: 60px;
+            border-radius: 15px;
+            margin-top: 15px;
+            /* display:flex; */
+            /* justify-content: center; */
+            align-items: center;
+            /* flex-direction: row; */
+            margin-left: 20px;
+            margin-top: 25px;
+            font-size: 20px;
+            /* box-shadow: inset 8px 0px 4px 5px grey; */
+            background-color: aqua;
+        }
+        #b1
+        {
+            width: 65px;
+            background-color: dimgrey;
+        }
+        input
+        {
+            height: 40px;
+            margin-top: 15px;
+            background-color: aquamarine;
+            border-radius: 15px;
+            margin-left: 20px;
+            width: 280px;
+            font-size: 15px;
+            box-shadow: inset 8px 0px 4px 5px grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="Container">
+
+
+        <div class="display">
+            <input type="text" id="display">
+        </div>
+        <div>
+            <button style="background-color: green;">AC</button>
+            <button style="background-color: red;">DEL</button>
+            <button>.</button>
+            <button>/</button>
+        </div>
+        <div>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>*</button>
+        </div>
+        <div>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>-</button>
+        </div>
+        <div>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>+</button>
+        </div>
+        <div>
+            <button>00</button>
+            <button>0</button>
+            <button>%</button>
+            <button id="b1">=</button>
+        </div>
+    </div>
+    <script src="Calculater2.js"></script>
+</body>
+</html>

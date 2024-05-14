@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest</title>
+</head>
+<body>
+    <h1>Simple Interest</h1>
+    <!-- <script>
+        let rat=2000;
+        let time=2;
+        let year=3;
+        let Interest=rat*time*year/100
+        document.write("Total Interest is:="+Interest)
+    </script> -->
+    <!-- Enter Number<input type="text" id="f1">
+    Enter Number<input type="text" id="f2">
+    Result   is:-<input type="text" id="Result">
+    <button onclick="f1()">+</button> -->
+    Enter Interest:<input type="text" id="f1">
+    Enter time: <input type="text" id="f2">
+    Enter rat : <input type="text" id="f3">
+    Result is : <input type="text" id="Result">
+    <button onclick="fun1()">click me</button>
+    <script>
+        // function f1()
+        // {
+        // var a=document.getElementById("f1").value;
+        // var b=document.getElementById("f2").value;
+        // var c=parseInt(a)+parseInt(b);
+        //  document.getElementById("Result").value=c;
+        // }
+        
+        
+
+        function fun1()
+        {
+        let int=Document.getElementById("f1").value;
+        let time=Document.getElementById("f2").value;
+        let rat=document.getElementById("f3").value;
+        let Total=parseInt(int)*parseInt(time)*parseInt(rat)/(100);
+        document.getElementById("Result").value=Total;
+        }
+    </script>
+    
+</body>
+</html>
