@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>ToDo List</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+     <style>
+          body{
+               background-color: navy;
+               height: 100vh;
+               font-family: Arial, Helvetica, sans-serif;
+          }
+           #d1
+           {
+               width: 100%;
+               max-width: 700px;
+               background: white;
+               border-radius: 10px;
+               /* display: flex; */
+               margin: auto;
+               margin-top: 100px;
+               text-align: center;
+           }
+          #d1 h1
+          {
+               color: red;
+               text-align: center;
+           }
+          form
+           {
+               display: flex;
+               align-items: center;
+               gap: 10px;
+           }
+           input[type="text"]
+           {
+               width: 60%;
+               padding: 10px;
+               border:4px solid #632fff;
+               border-radius: 15px;
+               font-size: 1rem;
+               margin-left: 20px;
+           }
+           #button
+           {
+               background-color: #632fff;
+               border: none;
+               color: white;
+               padding: 10px 20px;
+               cursor: pointer;
+               border-radius: 15px;
+               font-size: 1.5rem;
+
+           }
+           ul li
+           {
+               list-style-type: none;
+               text-align: left;
+               font-size: 1.1rem;
+               padding: 10px 6px 10px 30px;
+               cursor: pointer;
+               background-color:aliceblue;
+               border-bottom: 1px solid green;
+           }
+           ol li
+           {
+               text-align: left;
+               font-size: 1.1rem;
+               padding: 10px 6px 10px 30px;
+               cursor: pointer;
+               background-color:aliceblue;
+               border-bottom: 1px solid green;
+           }
+           #btn
+           {
+               float: right;
+               font-size: 20px;
+               line-height: 10px;
+               margin-right: 10px;
+               border: none;
+               color: red; 
+               border-radius: 5px;
+               padding: 2px;
+               cursor: pointer;
+           }
+           #btn2
+           {
+               float: right;
+               font-size: 20px;
+               line-height: 10px;
+               margin-right: 10px;
+               border: none;
+               color:chocolate; 
+               border-radius: 5px;
+               padding: 2px;
+               cursor: pointer;  
+           }
+           #btn3
+           {
+               float: right;
+               font-size: 25px;
+               line-height: 10px;
+               margin-right: 10px;
+               border: none;
+               color: green; 
+               border-radius: 5px;
+               padding: 2px;
+               cursor: pointer;
+           }
+     </style>
+</head>
+<body>
+     <form action="#" id="task-form">
+          <div id="d1">
+               <h1>Todo List</h1>
+                    <input type="text" id="input" placeholder="Add Your Task" autofocus>
+                    <button onclick="fun()" id="button">Add Task</button>
+          </form>
+               </div>
+</body>
+<script>
+     const displaydata=document.getElementById('input');
+     const ul=document.createElement('ul');
+     const h=document.createElement("h2");
+     h.innerHTML="NOT COMPLETED";
+     h.style.color="red"
+     h.style.backgroundColor="aliceblue"
+     const ul2=document.createElement("ul");
+     const h2=document.createElement("h2");
+     h2.innerHTML="COMPLETED";
+     h2.style.color="green";
+     h2.style.backgroundColor="aliceblue"
+     const div=document.getElementById("d1");
+     // const b=document.getElementsByTagName("button")
+     // const but=document.createElement("button");
+     div.appendChild(h);
+     div.appendChild(ul)
+     div.appendChild(h2);
+     div.appendChild(ul2);
+     function fun()
+     {
+          if(displaydata.value === "")
+          {
+               alert("Please Enter a Task")
+          }
+          else if(displaydata.value.trim()=== "")
+          {
+               alert("Bro kiyo maje le rhe ho")
+          }
+          else{
+               let li = document.createElement('li'); 
+               li.innerHTML = displaydata.value;
+               ul.appendChild(li);
+               let btn=document.createElement("button");
+               btn.className = "fa fa-trash";
+               btn.id = "btn";
+               li.appendChild(btn);
+               let edit=document.createElement("button");
+               edit.className = "fa-solid fa-pen-to-square";
+               edit.id = "btn2";
+               li.appendChild(edit);
+               let done=document.createElement("button");
+               done.className="fa-solid fa-check";
+               done.id="btn3"
+               li.appendChild(done);
+     }
+     displaydata.value = "";
+     savedata();
+     // savedata2();   
+}
+ul.addEventListener("click", function(event)
+{
+     if(event.target.id === "btn")
+     {
+     event.target.parentElement.remove();
+     savedata();
+     }
+     else if(event.target.id === "btn2")
+     {
+      displaydata.value = event.target.parentElement.textContent;
+      event.target.parentElement.remove(); 
+      savedata();
+     }
+     else if(event.target.id === "btn3")
+     {
+          // const neeru=document.createElement('li');
+          li=event.target.parentElement;
+          ul2.appendChild(li);
+          savedata();
+          savedata2(); 
+     }
+}
+) 
+ul2.addEventListener("click", function(event)
+{
+     if(event.target.id === "btn")
+     {
+     event.target.parentElement.remove();
+     savedata2();
+     }
+     //  else if(event.target.id === "btn2")
+     // {
+     //  displaydata.value = event.target.parentElement.textContent;
+     //  event.target.parentElement.remove();
+     //  savedata2(); 
+     // }
+}
+)    
+// function savedata()
+// {
+//      localStorage.setItem("task",ul.innerHTML);
+// }
+// function savedata2()
+// {
+//      localStorage.setItem("task1",ul2.innerHTML);
+// }
+// function showdata2()
+// {
+//      ul2.innerHTML=localStorage.getItem("task1");
+// }
+// function showdata()
+// {
+//      ul.innerHTML=localStorage.getItem("task");
+// }
+// showdata();
+// showdata2();
+</script>
+</html>
